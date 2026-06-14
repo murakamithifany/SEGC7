@@ -1,17 +1,12 @@
-function horaAtual() {
-    alert("Clique detectado!");
-    const agora = new Date();
-    document.getElementById("hora").innerText =
-        "Hora atual: " + agora.toLocaleTimeString();
-}
+document.addEventListener("DOMContentLoaded", () => {
+    const botao = document.getElementById("btnGithub");
+    const resultado = document.getElementById("resultado");
 
-document.addEventListener("DOMContentLoaded", function () {
-    console.log("DOM carregado");
+    botao.addEventListener("click", () => {
+        const agora = new Date();
 
-    const btn = document.getElementById("btnHora");
-    console.log(btn);
-
-    btn.addEventListener("click", horaAtual);
+        resultado.textContent =
+            "Script carregado do GitHub! Hora atual: " +
+            agora.toLocaleTimeString("pt-BR");
+    });
 });
-
-console.log("Script externo carregado!");
